@@ -1,3 +1,26 @@
 body {
 	background-color: #E1FDFF;
 }
+
+header {
+	height: 30px;
+	display: flex;
+	justify-content: center;
+}
+
+.menu-icon {
+	display: block;
+}
+
+.menu-heading-item {
+	display: flex;
+	align-items: center;
+	margin-left: 30px;
+	margin-right: 30px;
+}
+
+.header-title {
+	text-transform: uppercase;
+	font-family: Futura;
+	font-weight: 800;
+}
