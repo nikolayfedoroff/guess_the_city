@@ -3,13 +3,9 @@ body {
 }
 
 header {
-	height: 30px;
+	height: 50px;
 	display: flex;
 	justify-content: center;
-}
-
-.menu-icon {
-	display: block;
 }
 
 .menu-heading-item {
