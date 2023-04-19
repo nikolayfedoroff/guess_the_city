@@ -3,7 +3,7 @@ body {
 }
 
 header {
-	height: 50px;
+	height: 30px;
 	display: flex;
 	justify-content: center;
 }
@@ -24,72 +24,3 @@ header {
 	font-family: Futura;
 	font-weight: 800;
 }
-
-.menu {
-	width: 300px;
-	display: flex;
-	flex-direction: column;
-	position: absolute;
-	margin-left: -300px;
-	top: 0;
-	left: 0;
-	background-color: #E1FDFF;
-	height: 100%;
-}
-
-.close-menu-icon {
-	display: block;
-	width: 16px;
-	height: 16px;
-}
-
-.close-menu {
-	margin: 10px;
-	display: flex;
-	justify-content: end;
-}
-
-.new-game-header {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
-
-.menu-anim-expand {
-	animation-duration: 0.3s;
-	animation-direction: alternate;
-	animation-iteration-count: 1;
-	animation-name: expand;
-	animation-fill-mode: forwards;
-
-	box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-}
-
-@keyframes expand {
-	from {
-		margin-left: -300px;
-	}
-	to {
-		margin-left: 0px;
-	}
-}
-
-.menu-anim-collapse {
-	animation-duration: 0.3s;
-	animation-direction: alternate;
-	animation-iteration-count: 1;
-	animation-name: collapse;
-	animation-fill-mode: forwards;
-
-	box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-}
-
-@keyframes collapse {
-	from {
-		margin-left: 0px;
-	}
-	to {
-		margin-left: -300px;
-	}
-}
-
