@@ -1,9 +1,10 @@
 body {
 	background-color: #E1FDFF;
+	margin: 0;
 }
 
 header {
-	height: 50px;
+	height: 70px;
 	display: flex;
 	justify-content: center;
 }
@@ -19,4 +20,48 @@ header {
 	text-transform: uppercase;
 	font-family: Futura;
 	font-weight: 800;
+}
+
+.main-block {
+	width: 100vw;
+	height: calc(100vh - 70px);
+	display: flex;
+	justify-content: space-around;
+}
+
+.left-block {
+	width: 75vw;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+}
+
+.right-block {
+	width: 20vw;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+}
+
+#map {
+	height: 70vh;
+	border-radius: 10px;
+}
+
+.levels {
+	height: 15vh;
+	background-color: black;
+	border-radius: 10px;
+}
+
+#labels {
+	height: 80vh;
+	background-color: black;
+	border-radius: 10px;
+}
+
+#input-block {
+	height: 5vh;
+	background-color: black;
+	border-radius: 10px;
 }
