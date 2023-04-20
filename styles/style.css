@@ -50,18 +50,34 @@ header {
 
 .levels {
 	height: 15vh;
-	background-color: black;
+	background-color: white;
 	border-radius: 10px;
 }
 
 #labels {
 	height: 80vh;
-	background-color: black;
+	background-color: white;
 	border-radius: 10px;
 }
 
-#input-block {
+.input-block {
 	height: 5vh;
-	background-color: black;
-	border-radius: 10px;
+	background-color: white;
+	border-radius: 20px;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#input {
+	font-size: 14px;
+	height: calc(5vh - 20px);
+	width: calc(20vw - 40px);
+	display: block;
+	border: none;
+}
+
+#input:focus {
+	outline: none;
 }
