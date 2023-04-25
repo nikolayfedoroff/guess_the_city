@@ -40,7 +40,7 @@ header {
 	width: 25vw;
 	display: flex;
 	flex-direction: column;
-	justify-content: space-evenly;
+	justify-content: first;
 }
 
 #map {
@@ -73,12 +73,6 @@ header {
 	cursor: pointer;
 }
 
-#labels {
-	height: 80vh;
-	background-color: white;
-	border-radius: 10px;
-}
-
 .input-block {
 	height: 5vh;
 	background-color: white;
@@ -86,6 +80,8 @@ header {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	margin-top: 10px;
+	margin-bottom: 10px;
 }
 
 #input {
@@ -98,4 +94,26 @@ header {
 
 #input:focus {
 	outline: none;
+}
+
+.label {
+	display: flex;
+	align-items: center;
+	height: 5vh;
+	background-color: white;
+	border-radius: 20px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.text_in_label {
+	margin: 20px;
+	z-index: 1;
+}
+
+.block_in_label {
+	position: fixed;
+	height: 5vh;
+	border-radius: 20px;
+	background-color: green;
 }
