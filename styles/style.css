@@ -80,20 +80,42 @@ header {
 }
 
 .input-block {
+	display: flex;
+	flex-direction: row;
+
+	margin-top: 10px;
+}
+
+.input-block-field {
+	width: calc(25vw - 5vh);
 	height: 5vh;
 	background-color: white;
 	border-radius: 20px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	margin-top: 10px;
-	margin-bottom: 10px;
+}
+
+.input-block-button {
+	width: 5vh;
+	height: 5vh;
+	background-color: white;
+	border-radius: 5vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-left: 5px;
+}
+
+.input-block-button-image {
+	height: 4vh;
+	display: block;
 }
 
 #input {
 	font-size: 14px;
 	height: calc(5vh - 20px);
-	width: calc(25vw - 40px);
+	width: calc(calc(25vw - 5vh) - 40px);
 	display: block;
 	border: none;
 }
@@ -110,6 +132,7 @@ header {
 	border-radius: 20px;
 	margin-top: 10px;
 	margin-bottom: 10px;
+	font-weight: bold;
 }
 
 .text_in_label {
