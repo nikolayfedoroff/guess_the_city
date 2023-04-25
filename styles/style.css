@@ -107,8 +107,13 @@ header {
 }
 
 .text_in_label {
+	width: 25vw;
+
 	margin: 20px;
 	z-index: 1;
+
+	display: flex;
+	justify-content: space-between;
 }
 
 .block_in_label {

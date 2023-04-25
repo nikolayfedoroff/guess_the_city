@@ -85,7 +85,15 @@ function addCommonTitle(name, distance) {
 
     let textInLabel = document.createElement('div');
     textInLabel.classList.add('text_in_label');
-    textInLabel.innerHTML = name;
+
+    let nameInLabel = document.createElement('div');
+    let distInLabel = document.createElement('div');
+
+    nameInLabel.innerHTML = name;
+    distInLabel.innerHTML = distance;
+
+    textInLabel.appendChild(nameInLabel);
+    textInLabel.appendChild(distInLabel);
 
     let blockInLabel = document.createElement('div');
     blockInLabel.classList.add('block_in_label');
