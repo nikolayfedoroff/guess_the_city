@@ -48,7 +48,6 @@ header {
 	border-radius: 10px;
 
 	margin-top: 10px;
-	margin-bottom: 10px;
 }
 
 .levels {
@@ -96,7 +95,7 @@ header {
 	align-items: center;
 }
 
-.input-block-button {
+#input-block-button {
 	width: 5vh;
 	height: 5vh;
 	background-color: white;
