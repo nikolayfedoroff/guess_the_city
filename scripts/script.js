@@ -77,7 +77,7 @@ function hideTitles() {
 }
 
 function addCommonTitle(name, distance) {
-    let label = { 
+    let label = {
         element: document.createElement('div'),
         distance: distance,
         name: name
@@ -97,7 +97,7 @@ function addCommonTitle(name, distance) {
 
     let blockInLabel = document.createElement('div');
     blockInLabel.classList.add('block_in_label');
-    blockInLabel.style.width = `max(40px, calc(25vw * ${(1 - distance / maxDistance) ** 3}))`;
+    blockInLabel.style.width = `max(5vh, calc(25vw * ${(1 - distance / maxDistance) ** 3}))`;
 
     if (distance <= 1000) {
         blockInLabel.style.backgroundColor = '#00FE0D';
@@ -117,10 +117,35 @@ function addCommonTitle(name, distance) {
     showTitles();
 }
 
-addCommonTitle('Тюмень', 0);
-addCommonTitle('Саратов', 20);
-addCommonTitle('Самара', 10000);
-addCommonTitle('Москва', 10001);
-addCommonTitle('Санкт-Петербург', 701);
-addCommonTitle('Ханты-Мансийск', 1001);
-addCommonTitle('Троицк', 2501);
+function processInput() {
+    let text = document.getElementById('input').value;
+
+    let idx = -1;
+    for (let i = 0; i < curLevelIndexes.length; i++) {
+        if (text.toLowerCase() == data[curLevelIndexes[i]].name.toLowerCase()) {
+            idx = curLevelIndexes[i];
+        }
+    }
+
+    if (idx == -1) {
+        alert();
+    } else {
+        let distance = getDistance(L.latLng(data[curLevelIndexes[curCityIndex]].geo_lat, data[curLevelIndexes[curCityIndex]].geo_lon), L.latLng(data[idx].geo_lat, data[idx].geo_lon));
+        addCommonTitle(data[idx].name, distance)
+        if (distance < 0.001) {
+            alert();
+        }
+    }
+}
+
+let enterButton = document.getElementById('input-block-button');
+enterButton.addEventListener('click', processInput);
+
+let input = document.getElementById('input');
+input.addEventListener('keypress', function(event) {
+    if (event.key === 'Enter') {
+        event.preventDefault();
+        document.getElementById('input-block-button').click();
+        document.getElementById('input').value = '';
+    }
+});
