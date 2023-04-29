@@ -118,7 +118,11 @@ function addCommonTitle(name, distance) {
 }
 
 function processInput() {
-    let text = document.getElementById('input').value;
+    if (document.getElementById('input-block-field').classList.contains('error')) {
+        document.getElementById('input-block-field').classList.remove('error');
+    }
+
+    let text = document.getElementById('input').value.trim();
 
     let idx = -1;
     for (let i = 0; i < curLevelIndexes.length; i++) {
@@ -128,13 +132,20 @@ function processInput() {
     }
 
     if (idx == -1) {
-        alert();
+        document.getElementById('input-block-field').classList.add('error');
     } else {
         let distance = getDistance(L.latLng(data[curLevelIndexes[curCityIndex]].geo_lat, data[curLevelIndexes[curCityIndex]].geo_lon), L.latLng(data[idx].geo_lat, data[idx].geo_lon));
         addCommonTitle(data[idx].name, distance)
         if (distance < 0.001) {
-            alert();
+            alert('Верно')
         }
+        document.getElementById('input').value = '';
+    }
+}
+
+document.getElementById('input').oninput = function() {
+    if (document.getElementById('input-block-field').classList.contains('error')) {
+        document.getElementById('input-block-field').classList.remove('error');
     }
 }
 
@@ -146,6 +157,5 @@ input.addEventListener('keypress', function(event) {
     if (event.key === 'Enter') {
         event.preventDefault();
         document.getElementById('input-block-button').click();
-        document.getElementById('input').value = '';
     }
 });

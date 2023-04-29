@@ -81,7 +81,7 @@ header {
 	flex-direction: row;
 }
 
-.input-block-field {
+#input-block-field {
 	width: calc(25vw - 5vh);
 	height: 5vh;
 	background-color: white;
@@ -89,6 +89,10 @@ header {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+}
+
+.error {
+	border: 2px solid red;
 }
 
 #input-block-button {
@@ -141,7 +145,7 @@ header {
 }
 
 .block_in_label {
-	position: fixed;
+	position: absolute;
 	height: 5vh;
 	border-radius: 20px;
 	background-color: green;
