@@ -34,7 +34,7 @@ function getRandomInt(n) {
 let curLevelIndexes = level1Indexes;
 let curCityIndex = getRandomInt(curLevelIndexes.length);
 let labels = [];
-
+let markers = [];
 
 // map init
 
@@ -43,7 +43,7 @@ let mapOptions = {
     zoomSnap: 1
 };
 
-let map = L.map('map', mapOptions).setView([55.788631, 37.466790], 10);
+let map = L.map('map', mapOptions).setView([55.788631, 37.466790], 3);
 
 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19
@@ -99,6 +99,8 @@ function addCommonTitle(name, distance) {
     blockInLabel.classList.add('block_in_label');
     blockInLabel.style.width = `max(5vh, calc(25vw * ${(1 - distance / maxDistance) ** 3}))`;
 
+
+
     if (distance <= 1000) {
         blockInLabel.style.backgroundColor = '#00FE0D';
     } else if (distance <= 2500) {
@@ -134,10 +136,23 @@ function processInput() {
     if (idx == -1) {
         document.getElementById('input-block-field').classList.add('error');
     } else {
+        let flag = false;
+        for (let i = 0; i < labels.length; i++) {
+            if (labels[i].name == data[idx].name) {
+                flag = true;
+            }
+        }
+        if (flag) {
+            document.getElementById('input-block-field').classList.add('error');
+            document.getElementById('input').value = '';
+            return;
+        }
         let distance = getDistance(L.latLng(data[curLevelIndexes[curCityIndex]].geo_lat, data[curLevelIndexes[curCityIndex]].geo_lon), L.latLng(data[idx].geo_lat, data[idx].geo_lon));
-        addCommonTitle(data[idx].name, distance)
+        addCommonTitle(data[idx].name, distance);
+        markers.push(L.circle(L.latLng(data[idx].geo_lat, data[idx].geo_lon), 500, {color: 'red'}));
+        markers[markers.length - 1].addTo(map);
         if (distance < 0.001) {
-            alert('Верно')
+            alert('Верно');
         }
         document.getElementById('input').value = '';
     }
@@ -159,3 +174,11 @@ input.addEventListener('keypress', function(event) {
         document.getElementById('input-block-button').click();
     }
 });
+
+var circle = L.circle([51.508, -0.11], 100, {
+    color: 'red',
+    fillOpacity: 1
+}).addTo(map);
+
+circle.removeFrom(map);
+circle.addTo(map);
