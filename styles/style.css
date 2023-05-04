@@ -40,7 +40,7 @@ header {
 	width: 25vw;
 	display: flex;
 	flex-direction: column;
-	justify-content: first;
+	justify-content: start;
 }
 
 #map {
