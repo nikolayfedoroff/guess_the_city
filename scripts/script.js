@@ -174,11 +174,3 @@ input.addEventListener('keypress', function(event) {
         document.getElementById('input-block-button').click();
     }
 });
-
-var circle = L.circle([51.508, -0.11], 100, {
-    color: 'red',
-    fillOpacity: 1
-}).addTo(map);
-
-circle.removeFrom(map);
-circle.addTo(map);
