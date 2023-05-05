@@ -76,7 +76,7 @@ function hideTitles() {
     }
 }
 
-function addCommonTitle(name, distance) {
+function addCommonTitle(name, distance, idx) {
     let label = {
         element: document.createElement('div'),
         distance: distance,
@@ -99,15 +99,22 @@ function addCommonTitle(name, distance) {
     blockInLabel.classList.add('block_in_label');
     blockInLabel.style.width = `max(5vh, calc(25vw * ${(1 - distance / maxDistance) ** 3}))`;
 
-
+    markers.push(L.circle(L.latLng(data[idx].geo_lat, data[idx].geo_lon)));
 
     if (distance <= 1000) {
-        blockInLabel.style.backgroundColor = '#00FE0D';
+        blockInLabel.style.backgroundColor = 'green';
+        markers[markers.length - 1].setStyle({color: 'green'});
+    
     } else if (distance <= 2500) {
         blockInLabel.style.backgroundColor = 'yellow';
+        markers[markers.length - 1].setStyle({color: 'yellow'});
     } else {
         blockInLabel.style.backgroundColor = 'red';
+        markers[markers.length - 1].setStyle({color: 'red'});
     }
+
+    markers[markers.length - 1].setStyle({fillOpacity: 1});
+    markers[markers.length - 1].addTo(map);
 
     label.element.appendChild(textInLabel);
     label.element.appendChild(blockInLabel);
@@ -148,9 +155,7 @@ function processInput() {
             return;
         }
         let distance = getDistance(L.latLng(data[curLevelIndexes[curCityIndex]].geo_lat, data[curLevelIndexes[curCityIndex]].geo_lon), L.latLng(data[idx].geo_lat, data[idx].geo_lon));
-        addCommonTitle(data[idx].name, distance);
-        markers.push(L.circle(L.latLng(data[idx].geo_lat, data[idx].geo_lon), 500, {color: 'red'}));
-        markers[markers.length - 1].addTo(map);
+        addCommonTitle(data[idx].name, distance, idx);
         if (distance < 0.001) {
             alert('Верно');
         }
@@ -174,3 +179,39 @@ input.addEventListener('keypress', function(event) {
         document.getElementById('input-block-button').click();
     }
 });
+
+function clear() {
+    hideTitles();
+    labels = [];
+    for (let i = 0; i < markers.length; i++) {
+        markers[i].removeFrom(map);
+    }
+    markers = [];
+}
+
+function changeLevelToLevel1() {
+    clear();
+
+    curLevelIndexes = level1Indexes;
+    curCityIndex = getRandomInt(curLevelIndexes.length);
+}
+
+function changeLevelToLevel2() {
+    clear();
+
+    curLevelIndexes = level2Indexes;
+    curCityIndex = getRandomInt(curLevelIndexes.length);
+}
+
+function changeLevelToLevel3() {
+    clear();
+
+    curLevelIndexes = level3Indexes;
+    curCityIndex = getRandomInt(curLevelIndexes.length);
+}
+
+document.getElementById('level1').addEventListener('click', changeLevelToLevel1);
+document.getElementById('level2').addEventListener('click', changeLevelToLevel2);
+document.getElementById('level3').addEventListener('click', changeLevelToLevel3);
+
+
