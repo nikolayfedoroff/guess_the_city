@@ -46,12 +46,12 @@ header {
 #map {
 	height: 70vh;
 	border-radius: 10px;
+	box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
 .levels {
 	height: 10vh;
-	background-color: white;
-	border-radius: 10px;
+	background-color: #E1FDFF;
 
 	display: flex;
 	justify-content: space-around;
@@ -61,14 +61,21 @@ header {
 	margin-bottom: 10px;
 }
 
+.level-title {
+	font-size: 20px;
+	font-weight: bold;
+}
+
 .level {
 	width: 20vw;
 	height: 7vh;
 	border-radius: 30px;
-	background-color: grey;
+	font-weight: bold;
+	background-color: #ECC7FF;
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
 .level:hover {
@@ -89,6 +96,7 @@ header {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
 .error {
@@ -104,6 +112,7 @@ header {
 	justify-content: center;
 	align-items: center;
 	margin-left: 5px;
+	box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
 .input-block-button-image {
