@@ -20,6 +20,7 @@ header {
 	text-transform: uppercase;
 	font-family: Futura;
 	font-weight: 800;
+	text-shadow: 3px 3px 0px rgba(0, 0, 0, 0.15);
 }
 
 .main-block {
@@ -79,7 +80,6 @@ header {
 }
 
 .level:hover {
-	background-color: darkgrey;
 	cursor: pointer;
 }
 
