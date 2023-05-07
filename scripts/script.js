@@ -89,6 +89,8 @@ function addCommonTitle(name, distance, idx) {
     let nameInLabel = document.createElement('div');
     let distInLabel = document.createElement('div');
 
+    distInLabel.classList.add('dist-in-label');
+
     nameInLabel.innerHTML = name;
     distInLabel.innerHTML = distance;
 
@@ -217,11 +219,15 @@ document.getElementById('level3').addEventListener('click', changeLevelToLevel3)
 function showElements() {
     document.getElementById('view-button').classList.remove('hidden');
     document.getElementById('view-hide-button').classList.add('hidden');
+
+    document.getElementById('map').style.filter = 'blur(0px)';
 }
 
 function hideElements() {
     document.getElementById('view-hide-button').classList.remove('hidden');
     document.getElementById('view-button').classList.add('hidden');
+
+    document.getElementById('map').style.filter = 'blur(7px)';
 }
 
 document.getElementById('view-hide-button').addEventListener('click', showElements);
