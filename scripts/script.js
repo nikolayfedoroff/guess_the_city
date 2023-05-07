@@ -216,22 +216,22 @@ document.getElementById('level1').addEventListener('click', changeLevelToLevel1)
 document.getElementById('level2').addEventListener('click', changeLevelToLevel2);
 document.getElementById('level3').addEventListener('click', changeLevelToLevel3);
 
-function showElements() {
+function blurMap() {
     document.getElementById('view-button').classList.remove('hidden');
     document.getElementById('view-hide-button').classList.add('hidden');
 
     document.getElementById('map').style.filter = 'blur(0px)';
 }
 
-function hideElements() {
+function clearMap() {
     document.getElementById('view-hide-button').classList.remove('hidden');
     document.getElementById('view-button').classList.add('hidden');
 
     document.getElementById('map').style.filter = 'blur(7px)';
 }
 
-document.getElementById('view-hide-button').addEventListener('click', showElements);
-document.getElementById('view-button').addEventListener('click', hideElements);
+document.getElementById('view-hide-button').addEventListener('click', clearMap);
+document.getElementById('view-button').addEventListener('click', blurMap);
 
 
 
