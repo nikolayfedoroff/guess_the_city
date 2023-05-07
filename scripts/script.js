@@ -214,4 +214,18 @@ document.getElementById('level1').addEventListener('click', changeLevelToLevel1)
 document.getElementById('level2').addEventListener('click', changeLevelToLevel2);
 document.getElementById('level3').addEventListener('click', changeLevelToLevel3);
 
+function showElements() {
+    document.getElementById('view-button').classList.remove('hidden');
+    document.getElementById('view-hide-button').classList.add('hidden');
+}
+
+function hideElements() {
+    document.getElementById('view-hide-button').classList.remove('hidden');
+    document.getElementById('view-button').classList.add('hidden');
+}
+
+document.getElementById('view-hide-button').addEventListener('click', showElements);
+document.getElementById('view-button').addEventListener('click', hideElements);
+
+
 

@@ -20,7 +20,24 @@ header {
 	text-transform: uppercase;
 	font-family: Futura;
 	font-weight: 800;
-	text-shadow: 3px 3px 0px rgba(0, 0, 0, 0.15);
+	text-shadow: 3px 3px 1px rgba(0, 0, 0, 0.15);
+}
+
+.view-button:hover {
+	cursor: pointer;
+}
+
+.view-button-image {
+	height: 3em;
+}
+
+.view-hide-button-image {
+	height: 3em;
+}
+
+.hidden {
+	display: none;
+	visibility: hidden;
 }
 
 .main-block {
