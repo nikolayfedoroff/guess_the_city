@@ -29,10 +29,12 @@ header {
 
 .view-button-image {
 	height: 3em;
+	margin-left: 10px;
 }
 
 .view-hide-button-image {
 	height: 3em;
+	margin-left: 10px;
 }
 
 .hidden {
@@ -71,11 +73,9 @@ header {
 .levels {
 	height: 10vh;
 	background-color: #E1FDFF;
-
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
-
 	margin-top: 10px;
 	margin-bottom: 10px;
 }
@@ -163,10 +163,8 @@ header {
 
 .text_in_label {
 	width: 25vw;
-
 	margin: 20px;
 	z-index: 1;
-
 	display: flex;
 	justify-content: space-between;
 }

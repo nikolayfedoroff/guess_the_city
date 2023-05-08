@@ -105,17 +105,25 @@ function addCommonTitle(name, distance, idx) {
 
     if (distance <= 1000) {
         blockInLabel.style.backgroundColor = 'green';
-        markers[markers.length - 1].setStyle({color: 'green'});
-    
+        markers[markers.length - 1].setStyle({
+            color: 'green'
+        });
+
     } else if (distance <= 2500) {
         blockInLabel.style.backgroundColor = 'yellow';
-        markers[markers.length - 1].setStyle({color: 'yellow'});
+        markers[markers.length - 1].setStyle({
+            color: 'yellow'
+        });
     } else {
         blockInLabel.style.backgroundColor = 'red';
-        markers[markers.length - 1].setStyle({color: 'red'});
+        markers[markers.length - 1].setStyle({
+            color: 'red'
+        });
     }
 
-    markers[markers.length - 1].setStyle({fillOpacity: 1});
+    markers[markers.length - 1].setStyle({
+        fillOpacity: 1
+    });
     markers[markers.length - 1].addTo(map);
 
     label.element.appendChild(textInLabel);
@@ -232,6 +240,3 @@ function blurMap() {
 
 document.getElementById('view-button').addEventListener('click', blurMap);
 document.getElementById('view-hide-button').addEventListener('click', clearMap);
-
-
-

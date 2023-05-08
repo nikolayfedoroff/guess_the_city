@@ -1,55 +1,55 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="theme-color" content="#000000">
-	<link rel="stylesheet" href="styles/style.css">
-	<link rel="stylesheet" href="lib/leaflet/leaflet.css">
-	<script src="lib/leaflet/leaflet.js"></script>
-	<title>Отгадай город</title>
-</head>
-<body>
-	<header>
-		<div class="heading-item">
-			<h1 class="header-title">Отгадай город</h1>
-			<div id="view-button" class="view-button">
-				<img class="view-button-image" src="images/view.svg">
-			</div>
-			<div id="view-hide-button" class="view-button hidden">
-				<img class="view-hide-button-image" src="images/view-hide.svg">
-			</div>
-		</div>
-	</header>
-	<div class="main-block">
-		<div class="left-block">
-			<div id="map"></div>
-			<div class="levels">
-				<div class="level-title">Сложность</div>
-				<div class="level" id="level1">
-					<div>Административные центры</div>
-				</div>
-				<div class="level" id="level2">
-					<div>Самые населенные города</div>
-				</div>
-				<div class="level" id="level3">
-					<div>Все города России</div>
-				</div>
-			</div>
-		</div>
-		<div class="right-block">
-			<div class="input-block">
-				<div id="input-block-field">
-					<input type="text" id="input" placeholder="Введите название города">
-				</div>
-				<div id="input-block-button">
-					<img class="input-block-button-image" src="images/right-arrow.svg">
-				</div>
-			</div>
-			<div id="labels"></div>
-		</div>
-	</div>
-	<script src="data/data.js"></script>
-	<script src="scripts/script.js"></script>
-</body>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#000000">
+        <link rel="stylesheet" href="styles/style.css">
+        <link rel="stylesheet" href="lib/leaflet/leaflet.css">
+        <script src="lib/leaflet/leaflet.js"></script>
+        <title>Отгадай город</title>
+    </head>
+    <body>
+        <header>
+            <div class="heading-item">
+                <h1 class="header-title">Отгадай город</h1>
+                <div id="view-button" class="view-button">
+                    <img class="view-button-image" src="images/view.svg">
+                </div>
+                <div id="view-hide-button" class="view-button hidden">
+                    <img class="view-hide-button-image" src="images/view-hide.svg">
+                </div>
+            </div>
+        </header>
+        <div class="main-block">
+            <div class="left-block">
+                <div id="map"></div>
+                <div class="levels">
+                    <div class="level-title">Сложность</div>
+                    <div class="level" id="level1">
+                        <div>Административные центры</div>
+                    </div>
+                    <div class="level" id="level2">
+                        <div>Самые населенные города</div>
+                    </div>
+                    <div class="level" id="level3">
+                        <div>Все города России</div>
+                    </div>
+                </div>
+            </div>
+            <div class="right-block">
+                <div class="input-block">
+                    <div id="input-block-field">
+                        <input type="text" id="input" placeholder="Введите название города">
+                    </div>
+                    <div id="input-block-button">
+                        <img class="input-block-button-image" src="images/right-arrow.svg">
+                    </div>
+                </div>
+                <div id="labels"></div>
+            </div>
+        </div>
+        <script src="data/data.js"></script>
+        <script src="scripts/script.js"></script>
+    </body>
 </html>
